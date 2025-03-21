@@ -1,14 +1,15 @@
-// api/index.js
 const serverless = require('serverless-http');
+const dotenv = require("dotenv");
+dotenv.config();
+
 const app = require('../app'); // Import your Express app
 
-// Serverless handler for Vercel
-module.exports.handler = serverless(app);
+module.exports = serverless(app); // Serverless handler for Vercel
 
-// Local development server
+// Local development server (only runs locally)
 if (process.env.NODE_ENV === 'development') {
-  const PORT = process.env.PORT || 3000;
-  app.listen(PORT, () => {
-    console.log(`Local server: http://localhost:${PORT}`);
-  });
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, () => {
+        console.log(`Local server running at: http://localhost:${PORT}`);
+    });
 }
