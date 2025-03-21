@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon api/index.js", 
+    "start": "nodemon api/index.js",
     "dev": "NODE_ENV=development node api/index.js"
   },
   "dependencies": {
@@ -13,9 +13,9 @@
     "dotenv": "^16.4.7",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
-    "jade": "~1.11.0",
     "morgan": "~1.9.1",
     "nodemon": "^3.1.9",
+    "pug": "^3.0.3",
     "serverless-http": "^3.2.0"
   }
 }
